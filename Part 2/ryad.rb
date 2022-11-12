@@ -12,7 +12,7 @@ class Ryad
   def fill_array
     @enu = []
     @i = 0
-    100_000.times do
+    100_000_000_000.times do
       @slag = 1 / (@k * (@k + 1))
       @enu[@i] = @slag
       @i += 1

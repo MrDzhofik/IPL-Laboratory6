@@ -14,6 +14,9 @@ a.calc_otr { |x| x + cos(x) }
 puts "Result: #{a.trap}"
 
 a = Calculator.new(down, up)
-lam = ->(x) { tan(x + 1) / (x + 1) }
+lam = lambda { |x|
+  include Math
+  x + cos(x)
+}
 a.calc_otr(&lam)
 puts "Result: #{a.trap}"

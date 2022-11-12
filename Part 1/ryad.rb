@@ -10,7 +10,7 @@ class Ryad
   end
 
   def count
-    100_000.times do
+    100_000_000_000.times do
       @slag = 1 / (@k * (@k + 1))
       @summa += @slag
       @k += 1.0
