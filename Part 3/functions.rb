@@ -3,25 +3,25 @@
 # Calculate func
 class Calculator
   def initialize(down, upper)
-    @a = down
-    @b = upper
-    @x = 1
-    @n = (@a.abs + @b.abs)
+    @down = down
+    @upper = upper
+    @xor = 1
+    @num = (@down.abs + @upper.abs)
     @summa = 0
   end
 
   def calc_otr
-    @func = yield @a
-    @funv = yield @b
-    @s = 0
-    (@n - 1).times do
-      @s += yield @x
-      @x += 1
+    @func = yield @down
+    @funv = yield @upper
+    @sum = 0
+    (@num - 1).times do
+      @sum += yield @xor
+      @xor += 1
     end
-    @summa = @s
+    @summa = @sum
   end
 
   def trap
-    ((@func + @funv) / 2 + @summa) * (@b - @a) / @n
+    ((@func + @funv) / 2 + @summa) * (@upper - @down) / @num
   end
 end
